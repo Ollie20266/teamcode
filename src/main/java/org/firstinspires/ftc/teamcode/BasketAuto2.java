@@ -27,12 +27,12 @@ public class BasketAuto2 extends LinearOpMode {
     private final int ARM_EXTEND_VERT_SAMPLE = 895;
     private final int ARM_EXTEND_VERT_SPEC_PRE_HANG = 285;
     private final int ARM_EXTEND_VERT_SPEC_POST_HANG = 450;
-    private final double CLAW_PITCH_DOWN = 0.66;
-    private final double CLAW_PITCH_NEUTRAL = 0.6;
-    private final double CLAW_PITCH_UP = 0.54;
-    private final double CLAW_YAW_NEUTRAL = 0.5;
-    private final double CLAW_OPEN = 0.54;
-    private final double CLAW_CLOSED = 0.15;
+    private final double CLAW_PITCH_DOWN = 0.85;
+    private final double CLAW_PITCH_NEUTRAL = 0.51;
+    private final double CLAW_PITCH_UP = 0.17;
+    private final double CLAW_YAW_NEUTRAL = 0.48;
+    private final double CLAW_OPEN = 0.52;
+    private final double CLAW_CLOSED = 0.14;
     // this is only used for teleop
 //    private final double CLAW_DUMP_TIME = 0.5;
 //    private final double CLAW_CLOSE_TIME = 0.5;
@@ -86,6 +86,7 @@ public class BasketAuto2 extends LinearOpMode {
                                 new SleepAction(0.1),
                                 new MotorAction(armLift, ARM_LIFT_UP, 10),
                                 new MotorAction(armExtend, ARM_EXTEND_VERT_SAMPLE, 10),
+                                new ServoAction(clawYaw, CLAW_YAW_NEUTRAL, 0.0),
                                 new ServoAction(clawPitch, CLAW_PITCH_UP, 0.5)),
                         drive.actionBuilder(new Pose2d(-24,-65,Math.toRadians(90.0)))
                                 .lineToY(-61)
@@ -110,6 +111,7 @@ public class BasketAuto2 extends LinearOpMode {
                         new SequentialAction(
                                 new MotorAction(armLift, ARM_LIFT_UP, 500),
                                 new MotorAction(armExtend, ARM_EXTEND_VERT_SAMPLE, 10),
+                                new ServoAction(clawYaw, CLAW_YAW_NEUTRAL, 0.0),
                                 new ServoAction(clawPitch, CLAW_PITCH_UP, 0.5)),
                         drive.actionBuilder(new Pose2d(-47,-39,Math.toRadians(90.0)))
                                 .strafeToLinearHeading(new Vector2d(-54, -58), Math.toRadians(45.0))
@@ -133,6 +135,7 @@ public class BasketAuto2 extends LinearOpMode {
                         new SequentialAction(
                                 new MotorAction(armLift, ARM_LIFT_UP, 500),
                                 new MotorAction(armExtend, ARM_EXTEND_VERT_SAMPLE, 10),
+                                new ServoAction(clawYaw, CLAW_YAW_NEUTRAL, 0.0),
                                 new ServoAction(clawPitch, CLAW_PITCH_UP, 0.5)),
                         drive.actionBuilder(new Pose2d(-56,-40,Math.toRadians(90.0)))
                                 .strafeToLinearHeading(new Vector2d(-53, -59), Math.toRadians(45.0))
@@ -159,6 +162,7 @@ public class BasketAuto2 extends LinearOpMode {
                         new SequentialAction(
                                 new MotorAction(armLift, ARM_LIFT_UP, 500),
                                 new MotorAction(armExtend, ARM_EXTEND_VERT_SAMPLE, 10),
+                                new ServoAction(clawYaw, CLAW_YAW_NEUTRAL, 0.0),
                                 new ServoAction(clawPitch, CLAW_PITCH_UP, 0.5)),
                         drive.actionBuilder(new Pose2d(-57,-39,Math.toRadians(90.0))) // TODO: change actionBuilder Pose2d to 4th sample grabbing position
                                 .strafeToLinearHeading(new Vector2d(-51, -57), Math.toRadians(45.0))
@@ -166,7 +170,9 @@ public class BasketAuto2 extends LinearOpMode {
                 ),
                 new ServoAction(claw, CLAW_OPEN, 0.5),
                 new ServoAction(clawPitch, CLAW_PITCH_NEUTRAL, 0.5),
-                new MotorAction(armExtend, ARM_EXTEND_RETRACTED, 40)
+                new MotorAction(armExtend, ARM_EXTEND_RETRACTED, 40),
+                new MotorAction(armLift, ARM_LIFT_DOWN, 10),
+                new ServoAction(clawPitch, CLAW_PITCH_DOWN, 0.0)
         ));
     }
 
