@@ -31,8 +31,8 @@ public class BasketAuto2 extends LinearOpMode {
     private final double CLAW_PITCH_NEUTRAL = 0.51;
     private final double CLAW_PITCH_UP = 0.17;
     private final double CLAW_YAW_NEUTRAL = 0.48;
-    private final double CLAW_OPEN = 0.52;
-    private final double CLAW_CLOSED = 0.14;
+    private final double CLAW_OPEN = 0.49;
+    private final double CLAW_CLOSED = 0.11;
     // this is only used for teleop
 //    private final double CLAW_DUMP_TIME = 0.5;
 //    private final double CLAW_CLOSE_TIME = 0.5;
