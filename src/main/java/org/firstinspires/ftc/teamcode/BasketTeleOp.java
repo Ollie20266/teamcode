@@ -54,7 +54,7 @@ public class BasketTeleOp extends LinearOpMode {
     private final int ARM_EXTEND_VERT_SPEC_PRE_HANG = 285;
     private final int ARM_EXTEND_VERT_SPEC_POST_HANG = 450;
     private final double CLAW_PITCH_DOWN = 0.85;
-    private final double CLAW_PITCH_NEUTRAL = 0.51;
+    private final double CLAW_PITCH_NEUTRAL = 0.45;
 //    private final double CLAW_PITCH_GRAB_SPEC = 0.51;
     private final double CLAW_PITCH_UP = 0.17;
     private final double CLAW_YAW_NEUTRAL = 0.48;
