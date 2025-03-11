@@ -136,6 +136,8 @@ public class SpecAuto extends LinearOpMode {
                 new ServoAction(claw, CLAW_OPEN, 0.5),
                 new MotorAction(armExtend, ARM_EXTEND_RETRACTED, 40),
                 new ServoAction(clawPitch, CLAW_PITCH_NEUTRAL, 0.5)
+
+                //NEED TO ADD SPEC 4 AND 5
         ));
     }
 
