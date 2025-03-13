@@ -72,8 +72,8 @@ public class SpecAuto extends LinearOpMode {
                 ),
                 new MotorAction(armExtend, ARM_EXTEND_VERT_SPEC_POST_HANG, 10),
                 new ServoAction(claw, CLAW_OPEN, 0.5),
+                new ServoAction(clawPitch, CLAW_PITCH_DOWN, 0.5)
                 new MotorAction(armExtend, ARM_EXTEND_RETRACTED, 40),
-                new ServoAction(clawPitch, CLAW_PITCH_DOWN, 0.5),
 
                 //Drive to spec 2
                 drive.actionBuilder(new Pose2d(5,-34,Math.toRadians(270.0)))
@@ -118,8 +118,8 @@ public class SpecAuto extends LinearOpMode {
                         .build(),
                 new MotorAction(armExtend, ARM_EXTEND_VERT_SPEC_POST_HANG, 10),
                 new ServoAction(claw, CLAW_OPEN, 0.5),
+                new ServoAction(clawPitch, CLAW_PITCH_NEUTRAL, 0.5)
                 new MotorAction(armExtend, ARM_EXTEND_RETRACTED, 40),
-                new ServoAction(clawPitch, CLAW_PITCH_NEUTRAL, 0.5),
 
                 //Deposit spec 3
                 drive.actionBuilder(new Pose2d(7, -30,Math.toRadians(270.0)))
@@ -134,10 +134,24 @@ public class SpecAuto extends LinearOpMode {
                         .build(),
                 new MotorAction(armExtend, ARM_EXTEND_VERT_SPEC_POST_HANG, 10),
                 new ServoAction(claw, CLAW_OPEN, 0.5),
-                new MotorAction(armExtend, ARM_EXTEND_RETRACTED, 40),
                 new ServoAction(clawPitch, CLAW_PITCH_NEUTRAL, 0.5)
+                new MotorAction(armExtend, ARM_EXTEND_RETRACTED, 40),
 
-                //NEED TO ADD SPEC 4 AND 5
+                //Deposit Spec 4 (Pre-loadable)
+                drive.actionBuilder(new Pose2d(9, -30,Math.toRadians(270.0)))
+                        .strafeToLinearHeading(new Vector2d(40, -58), Math.toRadians(270.0))
+                        .build(),
+                new ServoAction(claw, CLAW_CLOSED, 0.5),
+                new MotorAction(armLift, ARM_LIFT_UP, 10),
+                new ServoAction(clawPitch, CLAW_PITCH_UP, 0.5),
+                new MotorAction(armExtend, ARM_EXTEND_VERT_SPEC_PRE_HANG, 10),
+                drive.actionBuilder(new Pose2d(40, -58,Math.toRadians(270.0)))
+                        .strafeToLinearHeading(new Vector2d(11,-30), Math.toRadians(270.0))
+                        .build(),
+                new MotorAction(armExtend, ARM_EXTEND_VERT_SPEC_POST_HANG, 10),
+                new ServoAction(claw, CLAW_OPEN, 0.5),
+                new ServoAction(clawPitch, CLAW_PITCH_NEUTRAL, 0.5)
+                new MotorAction(armExtend, ARM_EXTEND_RETRACTED, 40),
         ));
     }
 
