@@ -17,7 +17,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 
 @Autonomous(name = "SpecimenAuto")
 //@Disabled
-public class SpecAuto extends LinearOpMode {
+public class SpecimenAuto extends LinearOpMode {
 
 
     private final int ARM_LIFT_UP = 2850;
